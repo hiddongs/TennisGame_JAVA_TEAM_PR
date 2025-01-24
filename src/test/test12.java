@@ -4,7 +4,7 @@ public class test12 {
 
 	public static void main(String[] args) {
 
-		System.out.println("예진");
+		System.out.println("박예진");
 	
 	}
 
