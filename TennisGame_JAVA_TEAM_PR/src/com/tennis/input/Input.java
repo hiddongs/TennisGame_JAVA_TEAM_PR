@@ -110,7 +110,6 @@ public class Input {
 			
 			gender = sc.nextLine();
 			System.out.println("성별 : "+ gender);
-			
 			if (gender.equals("남자") || gender.equals("여자"))
 				
 				break;
@@ -154,14 +153,11 @@ public class Input {
 	}
 	
 	public static List<Player> getMalePlayers() {
-		
 		return new ArrayList<>(malePlayers);
 	
 	}
 
-
 	public static List<Player> getFemalePlayers() {
-		
 		return new ArrayList<>(femalePlayers);
 		
 	}
@@ -214,22 +210,17 @@ public class Input {
 				selectedPlayers.add(selectPlayer(femalePlayers, "B팀"));
 			}
 		}
-
-	System.out.println("fffffffffffffffff");
 		return selectedPlayers;
 	}
 	
 	// 여기서 선수 불러오기
-	//public Player selectPlayer(List<Player> playerList, String role) {
-	public Player selectPlayer(List<Player> playerList, String rol) {
+	public Player selectPlayer(List<Player> playerList, String role) {
 		//Print.printPlayerSelect();
-		System.out.println("---------aaaaaaaaaaa");
 		for (int i = 0; i < playerList.size(); i++) {
 			System.out.printf("%d. %s\n", i + 1, playerList.get(i).getName());
 		}
 		int choice = Integer.parseInt(sc.nextLine()) - 1;
-		System.out.println("rol   : "  +rol);
-		
+		System.out.println("role   : "  +role);
 		return playerList.get(choice);
 	}   
 
@@ -239,17 +230,18 @@ public class Input {
 		List<Player> listA = new ArrayList<>();
 		List<Player> listB = new ArrayList<>();
 		if (length == 2) { // 단식
+			Print.printPlayerTeam();
 			listA = players.subList(0, 1);
 			listB = players.subList(1, 2);
 		} else if (players.size() == 4) { // 복식
+			Print.printPlayerTeam();
 			listA = players.subList(0, 2);
-			System.out.println("listAAAAA : " + listA);
 			listB = players.subList(2, 4);
-			System.out.println("listBBBBB : " + listB);
-			
 		}
 		teams[0] = new Team("A", listA);
+		System.out.println("A팀: " + listA);
 		teams[1] = new Team("B", listB);
+		System.out.println("B팀: " + listB);
 		return teams;
 	}
 
